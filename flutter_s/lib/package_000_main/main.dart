@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
     List jumpDataList = getJumpData();
     return MaterialApp(
       routes: <String, WidgetBuilder>{
-        '/app_001': (context) => App001(),
-        '/app_002': (context) => App001(),
-        '/app_003': (context) => App001(),
+        '/app_001': (context) => App001(title: jumpDataList[0].name),
+        '/app_002': (context) => App001(title: jumpDataList[1].name),
+        '/app_003': (context) => App001(title: jumpDataList[2].name),
       },
       debugShowCheckedModeBanner: false,
       title: 'FlutterS',
@@ -54,7 +54,7 @@ class HomeListItemPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              '${index+1}.${jumpInfo.name}',
+              '${index + 1}.${jumpInfo.name}',
               style: TextStyle(fontSize: 16, color: Colors.black87),
             ),
             Container(
